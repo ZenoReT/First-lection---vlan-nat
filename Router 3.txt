@@ -1,0 +1,200 @@
+ speed auto
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+ip classless
+ip route 0.0.0.0 0.0.0.0 213.234.10.1 
+!
+ip flow-export version 9
+!
+!
+ip access-list standard FOR-NAT
+ permit 192.168.2.0 0.0.0.255
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+end
+
+
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#permit 192.168.3.0 0.0.0.255
+                ^
+% Invalid input detected at '^' marker.
+	
+Router(config)#ip ac
+Router(config)#ip access-list sta
+Router(config)#ip access-list standard FOR-NAT
+Router(config-std-nacl)#permit 192.168.3.0 0.0.0.255
+Router(config-std-nacl)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#show run
+Building configuration...
+
+Current configuration : 916 bytes
+!
+version 12.4
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname Router
+!
+!
+!
+!
+!
+!
+!
+!
+ip cef
+no ipv6 cef
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/0
+ no ip address
+ duplex auto
+ speed auto
+!
+interface FastEthernet0/0.2
+ encapsulation dot1Q 2
+ ip address 192.168.2.1 255.255.255.0
+ ip nat inside
+!
+interface FastEthernet0/0.3
+ encapsulation dot1Q 3
+ ip address 192.168.3.1 255.255.255.0
+ ip nat inside
+!
+interface FastEthernet0/1
+ ip address 213.234.10.2 255.255.255.252
+ ip nat outside
+ duplex auto
+ speed auto
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+ip classless
+ip route 0.0.0.0 0.0.0.0 213.234.10.1 
+!
+ip flow-export version 9
+!
+!
+ip access-list standard FOR-NAT
+ permit 192.168.2.0 0.0.0.255
+ permit 192.168.3.0 0.0.0.255
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+end
+
+
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#ip nat inside source list FOR-NAT inter
+Router(config)#ip nat inside source list FOR-NAT interface fa
+Router(config)#ip nat inside source list FOR-NAT interface fastEthernet 0/1 over
+Router(config)#ip nat inside source list FOR-NAT interface fastEthernet 0/1 overload 
+Router(config)#wr mem
+               ^
+% Invalid input detected at '^' marker.
+	
+Router(config)#wr
+Router(config)#exit
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#wri
+Router#write me
+Router#write memory 
+Building configuration...
+[OK]
+Router#
+Router#show ip
+Router#show ip na
+Router#show ip nat tr
+Router#show ip nat translations 
+Pro  Inside global     Inside local       Outside local      Outside global
+icmp 213.234.10.2:18   192.168.2.2:18     213.234.20.2:18    213.234.20.2:18
+icmp 213.234.10.2:19   192.168.2.2:19     213.234.20.2:19    213.234.20.2:19
+icmp 213.234.10.2:20   192.168.2.2:20     213.234.20.2:20    213.234.20.2:20
+icmp 213.234.10.2:21   192.168.2.2:21     213.234.20.2:21    213.234.20.2:21
+
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#ip nat ins
+Router(config)#ip nat inside sour
+Router(config)#ip nat inside source stati
+Router(config)#ip nat inside source static 192.168.3.2 80 213.234.10.2 80
+                                                       ^
+% Invalid input detected at '^' marker.
+	
+Router(config)#ip nat inside source static tcp 192.168.3.2 80 213.234.10.2 80
+Router(config)#exit
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#wr mem
+Building configuration...
+[OK]
+Router#

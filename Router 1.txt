@@ -1,0 +1,181 @@
+System Bootstrap, Version 12.3(8r)T8, RELEASE SOFTWARE (fc1)
+Cisco 1841 (revision 5.0) with 114688K/16384K bytes of memory.
+
+Readonly ROMMON initialized
+
+Self decompressing the image :
+######################### [OK]
+              Restricted Rights Legend
+
+Use, duplication, or disclosure by the Government is
+subject to restrictions as set forth in subparagraph
+(c) of the Commercial Computer Software - Restricted
+Rights clause at FAR sec. 52.227-19 and subparagraph
+(c) (1) (ii) of the Rights in Technical Data and Computer
+Software clause at DFARS sec. 252.227-7013.
+
+           cisco Systems, Inc.
+           170 West Tasman Drive
+           San Jose, California 95134-1706
+
+
+
+Cisco IOS Software, 1841 Software (C1841-ADVIPSERVICESK9-M), Version 12.4(15)T1, RELEASE SOFTWARE (fc2)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2007 by Cisco Systems, Inc.
+Compiled Wed 18-Jul-07 04:52 by pt_team
+Image text-base: 0x60080608, data-base: 0x6270CD50
+
+
+This product contains cryptographic features and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+
+Cisco 1841 (revision 5.0) with 114688K/16384K bytes of memory.
+Processor board ID FTX0947Z18E
+M860 processor: part number 0, mask 49
+2 FastEthernet/IEEE 802.3 interface(s)
+191K bytes of NVRAM.
+63488K bytes of ATA CompactFlash (Read/Write)
+Cisco IOS Software, 1841 Software (C1841-ADVIPSERVICESK9-M), Version 12.4(15)T1, RELEASE SOFTWARE (fc2)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2007 by Cisco Systems, Inc.
+Compiled Wed 18-Jul-07 04:52 by pt_team
+
+Press RETURN to get started!
+
+
+
+Router>en
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#interface fa
+Router(config)#interface fastEthernet 0/0
+Router(config-if)#?
+  arp                Set arp type (arpa, probe, snap) or timeout
+  bandwidth          Set bandwidth informational parameter
+  cdp                CDP interface subcommands
+  channel-group      Add this interface to an Etherchannel group
+  crypto             Encryption/Decryption commands
+  custom-queue-list  Assign a custom queue list to an interface
+  delay              Specify interface throughput delay
+  description        Interface specific description
+  duplex             Configure duplex operation.
+  exit               Exit from interface configuration mode
+  fair-queue         Enable Fair Queuing on an Interface
+  hold-queue         Set hold queue depth
+  ip                 Interface Internet Protocol config commands
+  ipv6               IPv6 interface subcommands
+  lldp               LLDP interface subcommands
+  mac-address        Manually set interface MAC address
+  mtu                Set the interface Maximum Transmission Unit (MTU)
+  no                 Negate a command or set its defaults
+  pppoe              pppoe interface subcommands
+  priority-group     Assign a priority group to an interface
+  service-policy     Configure QoS Service Policy
+  shutdown           Shutdown the selected interface
+  speed              Configure speed operation.
+  standby            HSRP interface configuration commands
+  tx-ring-limit      Configure PA level transmit ring limit
+  zone-member        Apply zone name
+Router(config-if)#
+Router(config-if)#sw
+Router(config-if)#mo
+Router(config-if)#ac
+Router(config-if)#swi
+Router(config-if)#swit
+Router(config-if)#ip
+Router(config-if)#ip?
+ip  ipv6  
+Router(config-if)#ip 213.234.10.1
+                     ^
+% Invalid input detected at '^' marker.
+	
+Router(config-if)#ip
+Router(config-if)#ip 213.234.10.1?
+% Unrecognized command
+Router(config-if)#int
+Router(config-if)#exit
+Router(config)#inter
+Router(config)#interface fa
+Router(config)#interface fastEthernet 0/0
+Router(config-if)#no sh
+Router(config-if)#no shutdown 
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface FastEthernet0/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/0, changed state to up
+
+Router(config-if)#enc
+Router(config-if)#enca
+Router(config-if)#ip add 213.234.10.1 255.255.255.252
+Router(config-if)#exit
+Router(config)#in
+Router(config)#interface  fa 0/1
+Router(config-if)#no shut
+Router(config-if)#no shutdown 
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface FastEthernet0/1, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1, changed state to up
+
+Router(config-if)#en
+Router(config-if)#ip add 213.234.20.1 255.255.255.252
+Router(config-if)#enc
+Router(config-if)#exit
+Router(config)#enc
+Router(config)#
+
+
+
+
+
+
+
+
+Router con0 is now available
+
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Router>wr mem
+          ^
+% Invalid input detected at '^' marker.
+	
+Router>en
+Router#wr mem
+Building configuration...
+[OK]
+Router#
+Router#
+Router#
